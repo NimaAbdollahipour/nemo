@@ -10,7 +10,7 @@ const RangeSelector = ({ length, value = 3, onValueChange, height=8 }) => {
       {[...Array(length)].map((_, index) => (
         <Pressable
           key={index + 1}
-          onPress={() => onValueChange(index)}
+          onPress={onValueChange && onValueChange(index)}
           style={{
             backgroundColor: index <= value ? colors.text : 'transparent',
             flex: 1,
